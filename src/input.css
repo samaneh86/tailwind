@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+[x-cloak]{display:none}
+
+.custom-input{
+    @apply  pl-8 rounded-full  w-full bg-white bg-opacity-25 h-8 focus:outline-none;
+}

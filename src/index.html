@@ -1,0 +1,194 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./output.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body class="bg-gradient-to-r from-red-600 to-indigo-600 m-5 flex justify-center items-center box-border">
+
+
+    <div class="main h-4/5 shadow-glass border border-b  border-gray-50 p-6 w-5/12 flex flex-col bg-white bg-opacity-25 rounded-lg"
+        x-data="{tab:2}">
+        <ul class="menu list-none flex flex-row">
+            <li class=" text-md p-3 font-bold cursor-pointer transition" @click="tab=1"
+                x-bind:class="{' border-b-4 border-white':tab===1}">Login</li>
+            <li class=" text-md p-3 font-bold cursor-pointer transition" @click="tab=2"
+                x-bind:class="{' border-b-4 border-white':tab===2}">Register</li>
+        </ul>
+        <div class="social flex flex-col justify-center items-center " x-data="{openTwitter:false}">
+            <h1 class="text-md mb-5 font-bold">logged In With</h1>
+            <div class="social items flex flex-row gap-x-3">
+                <div class="twitter flex rounded-full p-3  border justify-center items-center bg-blue-300 text-md  hover:bg-blue-500 cursor-pointer"
+                    @click="openTwitter=true">
+                    <svg class="w-8 h-8  text-white  dark:text-white " aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        viewBox="0 0 24 24">
+                        <path fill-rule="evenodd"
+                            d="M22 5.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.343 8.343 0 0 1-2.605.981A4.13 4.13 0 0 0 15.85 4a4.068 4.068 0 0 0-4.1 4.038c0 .31.035.618.105.919A11.705 11.705 0 0 1 3.4 4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 6.1 13.635a4.192 4.192 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 2 18.184 11.732 11.732 0 0 0 8.291 20 11.502 11.502 0 0 0 19.964 8.5c0-.177 0-.349-.012-.523A8.143 8.143 0 0 0 22 5.892Z"
+                            clip-rule="evenodd" />
+                    </svg>
+
+                </div>
+                <div
+                    class="twitter flex rounded-full p-3  border justify-center items-center bg-blue-600  hover:bg-blue-800 text-md cursor-pointer">
+                    <svg class="w-8 h-8 text-gray-800 dark:text-white" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        viewBox="0 0 24 24">
+                        <path fill-rule="evenodd"
+                            d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z"
+                            clip-rule="evenodd" />
+                    </svg>
+
+
+                </div>
+                <div
+                    class="twitter flex rounded-full p-3  border justify-center items-center bg-green-600 hover:bg-green-800 text-md cursor-pointer">
+                    <svg class="w-8 h-8 text-gray-800 dark:text-white" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path fill="currentColor" fill-rule="evenodd"
+                            d="M12 4a8 8 0 0 0-6.895 12.06l.569.718-.697 2.359 2.32-.648.379.243A8 8 0 1 0 12 4ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.96 9.96 0 0 1-5.016-1.347l-4.948 1.382 1.426-4.829-.006-.007-.033-.055A9.958 9.958 0 0 1 2 12Z"
+                            clip-rule="evenodd" />
+                        <path fill="currentColor"
+                            d="M16.735 13.492c-.038-.018-1.497-.736-1.756-.83a1.008 1.008 0 0 0-.34-.075c-.196 0-.362.098-.49.291-.146.217-.587.732-.723.886-.018.02-.042.045-.057.045-.013 0-.239-.093-.307-.123-1.564-.68-2.751-2.313-2.914-2.589-.023-.04-.024-.057-.024-.057.005-.021.058-.074.085-.101.08-.079.166-.182.249-.283l.117-.14c.121-.14.175-.25.237-.375l.033-.066a.68.68 0 0 0-.02-.64c-.034-.069-.65-1.555-.715-1.711-.158-.377-.366-.552-.655-.552-.027 0 0 0-.112.005-.137.005-.883.104-1.213.311-.35.22-.94.924-.94 2.16 0 1.112.705 2.162 1.008 2.561l.041.06c1.161 1.695 2.608 2.951 4.074 3.537 1.412.564 2.081.63 2.461.63.16 0 .288-.013.4-.024l.072-.007c.488-.043 1.56-.599 1.804-1.276.192-.534.243-1.117.115-1.329-.088-.144-.239-.216-.43-.308Z" />
+                    </svg>
+
+
+
+                </div>
+            </div>
+            <!--MODAL -->
+            <div class="modal-layer z-10 bg-gray-50 h-full fixed inset-0 flex items-center justify-center bg-opacity-50 "
+                x-show="openTwitter" x-on:click.away="openTwitter=false">
+                <div class="modal  relative flex flex-row w-6/12 h-60 rounded-2xl overflow-hidden sm:flex-col sm:h-96">
+                    <!--close modal-->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 absolute  text-white font-bold text-md top-4 left-4 cursor-pointer" @click="openTwitter=false">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                      </svg>
+                      
+                    <!--LOGO OF MODAL-->
+                    <div class=" logo flex justify-center items-center w-1/3 h-full bg-blue-300 sm:w-full sm:h-1/2">
+                        <svg class=" w-32 h-32 text-white text-md dark:text-white lg:hover:animate-bounce" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path fill-rule="evenodd"
+                                d="M22 5.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.343 8.343 0 0 1-2.605.981A4.13 4.13 0 0 0 15.85 4a4.068 4.068 0 0 0-4.1 4.038c0 .31.035.618.105.919A11.705 11.705 0 0 1 3.4 4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 6.1 13.635a4.192 4.192 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 2 18.184 11.732 11.732 0 0 0 8.291 20 11.502 11.502 0 0 0 19.964 8.5c0-.177 0-.349-.012-.523A8.143 8.143 0 0 0 22 5.892Z"
+                                clip-rule="evenodd" />
+                        </svg>
+
+                    </div>
+                    <!--END OF LOGO OF MODAL-->
+                    <!--FORM OF MODAL-->
+                    <form class="form-section flex flex-col w-2/3 p-3 h-full bg-white sm:w-full sm:hustify-center sm:items-center sm:h-1/2 ">
+                        <label class="mb-2 text-lg font-bold sm:hidden">email</label>
+                        <div class="relative">
+                            <input type="email"
+                                class="h-5 w-full border-gray-50 rounded-full focus:outline-none pt-3 pb-3 pl-12"
+                                placeholder="enter your email ">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="absolute size-6 top-1 left-2 text-blue-700">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                            </svg>
+
+                        </div>
+                        <button class="text-white bg-blue-500 rounded-lg w-full p-2 mt-7">log in</button>
+
+                    </form>
+                    <!--END OF FORM OF MODAL-->
+                </div>
+            </div>
+            <!--END OF MODAL-->
+        </div>
+        <form class="flex flex-col  " x-show="tab===1">
+            <div class="flex flex-col">
+                <label class="mb-2">Username</label>
+                <div class="relative w-full ">
+                    <input type="text" class="custom-input">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="text-blue-600 size-6 absolute top-1 left-2 ">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    </svg>
+
+                </div>
+
+            </div>
+            <div class="flex flex-col mb-3">
+                <label class="mb-2">Password</label>
+                <div class="relative w-full ">
+                    <input type="password" class="custom-input">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="text-blue-600 size-6 absolute top-1 left-2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+                    </svg>
+
+
+                </div>
+
+            </div>
+            <button x-on:click.prevent class="w-full p-2 text-white bg-blue-600 rounded-full font-bold  ">
+                logged in
+            </button>
+
+        </form>
+
+        <form class="flex flex-col " x-show="tab===2" x-cloak>
+
+            <div class="flex flex-col">
+                <label class="mb-2">Name</label>
+                <div class="relative w-full ">
+                    <input type="text" class="custom-input">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="text-blue-600 size-6 absolute top-1 left-2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                    </svg>
+
+
+                </div>
+
+            </div>
+            <div class="flex flex-col">
+                <label class="mb-2">Username</label>
+                <div class="relative w-full ">
+                    <input type="text" class="custom-input">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="text-blue-600 size-6 absolute top-1 left-2 ">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    </svg>
+
+                </div>
+
+            </div>
+            <div class="flex flex-col mb-3">
+                <label class="mb-2">Password</label>
+                <div class="relative w-full ">
+                    <input type="password" class="custom-input">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6 text-blue-600 absolute top-1 left-2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+                    </svg>
+
+
+                </div>
+
+            </div>
+            <button x-on:click.prevent class="w-full p-2 text-white bg-blue-600 rounded-full font-bold">
+                logged in
+            </button>
+
+        </form>
+    </div>
+
+
+
+</body>
+
+</html>
